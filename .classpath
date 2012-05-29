@@ -1,0 +1,16 @@
+<classpath>
+  <classpathentry output="target/scala-2.9.1/classes" path="src/main/scala" kind="src"></classpathentry>
+  <classpathentry output="target/scala-2.9.1/classes" path="src/main/java" kind="src"></classpathentry>
+  <classpathentry output="target/scala-2.9.1/test-classes" path="src/test/scala" kind="src"></classpathentry>
+  <classpathentry output="target/scala-2.9.1/test-classes" path="src/test/java" kind="src"></classpathentry>
+  <classpathentry path="/Users/macarse/Documents/android-sdk-mac_86/platforms/android-4/android.jar" kind="lib"></classpathentry>
+  <classpathentry path="org.scala-ide.sdt.launching.SCALA_CONTAINER" kind="con"></classpathentry>
+  <classpathentry path="/Users/macarse/.ivy2/cache/org.scalatest/scalatest_2.9.1/jars/scalatest_2.9.1-1.7.RC1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/macarse/.ivy2/cache/com.google.inject/guice/jars/guice-3.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/macarse/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/macarse/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/macarse/.ivy2/cache/org.sonatype.sisu.inject/cglib/jars/cglib-2.2.1-v20090111.jar" kind="lib"></classpathentry>
+  <classpathentry path="/Users/macarse/.ivy2/cache/asm/asm/jars/asm-3.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"></classpathentry>
+  <classpathentry path="bin" kind="output"></classpathentry>
+</classpath>
