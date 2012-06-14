@@ -17,17 +17,20 @@ object PhotosLoader extends Actor {
       react {
         case LoadImage(photoToLoad) => {
           Log.d("com.test.actors", "LoadImage with photoToLoad " + photoToLoad + " from " + Thread.currentThread)
-          val bitmapFromCache = CacheActor !? Contains(photoToLoad)
-
-          if ( bitmapFromCache != None ) {
-            sender ! ImageLoaded(photoToLoad, bitmapFromCache.asInstanceOf[Bitmap])
-          } else {
-            val bitmapDownloaded = DownloadActor !? DownloadBitmap(photoToLoad)
-            if ( bitmapDownloaded != null ) {
-              CacheActor ! Put(photoToLoad, bitmapDownloaded.asInstanceOf[Bitmap])
-              sender ! ImageLoaded(photoToLoad, bitmapDownloaded.asInstanceOf[Bitmap])
-            }
+          Log.d("com.test.actors", "sender1 " + sender);
+          val bitmapFromCache : Option[Bitmap] = (CacheActor !? Contains(photoToLoad)).asInstanceOf[Option[Bitmap]]
+          Log.d("com.test.actors", "sender2 " + sender);
+          val bitmap : Bitmap = bitmapFromCache getOrElse {
+            (DownloadActor !? DownloadBitmap(photoToLoad)).asInstanceOf[Bitmap]
           }
+
+          Log.d("com.test.actors", "sender3 " + sender);
+          if ( bitmap != null ) {
+            CacheActor ! Put(photoToLoad, bitmap)
+          }
+          Log.d("com.test.actors", "sender4 " + sender);
+          sender ! ImageLoaded(photoToLoad, bitmap)
+
         }
       }
     }
